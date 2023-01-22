@@ -42,7 +42,7 @@ func main() {
 		fmt.Println("    - inorder")
 		fmt.Println("    - postorder")
 		scanner.Scan()
-		t_binary_tree.RunBinaryTree(scanner.Text())
+		t_binary_tree.Run(scanner.Text())
 	default:
 		fmt.Println("TODO: Implement the rest of the data structures")
 	}

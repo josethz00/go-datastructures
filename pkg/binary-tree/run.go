@@ -2,7 +2,7 @@ package t_binary_tree
 
 import "fmt"
 
-func RunBinaryTree(traversalType string) {
+func Run(traversalType string) {
 	binaryTree := NewBinaryTree()
 	binaryTree.Insert(50)
 	binaryTree.Insert(25)
