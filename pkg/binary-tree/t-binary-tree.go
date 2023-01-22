@@ -1,5 +1,7 @@
 package t_binary_tree
 
+import "fmt"
+
 type Node struct {
 	value int
 	left  *Node
@@ -36,4 +38,14 @@ func (t *BinaryTree) Insert(value int) {
 			}
 		}
 	}
+}
+
+func (t *BinaryTree) PreOrderTraversal(currentNode *Node) {
+	if currentNode == nil {
+		return
+	}
+
+	fmt.Print(currentNode.value, " ")      // print the current node value
+	t.PreOrderTraversal(currentNode.left)  // recursively call the function for the left node
+	t.PreOrderTraversal(currentNode.right) // recursively call the function for the right node
 }
