@@ -50,6 +50,26 @@ func (t *BinaryTree) PreOrderTraversal(currentNode *Node) {
 	t.PreOrderTraversal(currentNode.right) // recursively call the function for the right node
 }
 
+func (t *BinaryTree) InOrderTraversal(currentNode *Node) {
+	if currentNode == nil {
+		return
+	}
+
+	t.InOrderTraversal(currentNode.left)  // recursively call the function for the left node
+	fmt.Print(currentNode.value, " ")     // print the current node value
+	t.InOrderTraversal(currentNode.right) // recursively call the function for the right node
+}
+
+func (t *BinaryTree) PostOrderTraversal(currentNode *Node) {
+	if currentNode == nil {
+		return
+	}
+
+	t.PostOrderTraversal(currentNode.left)  // recursively call the function for the left node
+	t.PostOrderTraversal(currentNode.right) // recursively call the function for the right node
+	fmt.Print(currentNode.value, " ")       // print the current node value
+}
+
 func (t *BinaryTree) Print(prefix string, parent *Node, isLeft bool, isRoot bool) {
 	if parent == nil {
 		return
