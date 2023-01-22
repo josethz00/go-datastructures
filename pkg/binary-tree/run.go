@@ -24,11 +24,11 @@ func Run(traversalType string) {
 		return
 	}
 	if traversalType == "inorder" {
-		// binaryTree.InOrderTraversal(binaryTree.root)
+		binaryTree.InOrderTraversal(binaryTree.root)
 		return
 	}
 	if traversalType == "postorder" {
-		// binaryTree.PostOrderTraversal(binaryTree.root)
+		binaryTree.PostOrderTraversal(binaryTree.root)
 		return
 	}
 
