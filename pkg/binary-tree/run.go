@@ -15,8 +15,14 @@ func Run(traversalType string) {
 	binaryTree.Insert(43)
 	binaryTree.Insert(30)
 
-	fmt.Print("Binary tree representation: \n\n")
+	fmt.Print("\nBinary tree representation: \n\n")
 	binaryTree.Print("", binaryTree.root, false, true)
+	fmt.Println()
+
+	fmt.Print("Reversed binary tree representation: \n\n")
+	reversedBinaryTree := binaryTree
+	reversedBinaryTree.Reverse(reversedBinaryTree.root)
+	reversedBinaryTree.Print("", reversedBinaryTree.root, false, true)
 	fmt.Println()
 
 	if traversalType == "preorder" {
