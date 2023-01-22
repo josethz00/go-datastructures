@@ -1,3 +1,3 @@
-module github.com/josethz00/go-datastructures
+module go-datastructures
 
 go 1.18
