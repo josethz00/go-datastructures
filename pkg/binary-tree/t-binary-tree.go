@@ -49,3 +49,29 @@ func (t *BinaryTree) PreOrderTraversal(currentNode *Node) {
 	t.PreOrderTraversal(currentNode.left)  // recursively call the function for the left node
 	t.PreOrderTraversal(currentNode.right) // recursively call the function for the right node
 }
+
+func (t *BinaryTree) Print(prefix string, parent *Node, isLeft bool, isRoot bool) {
+	if parent == nil {
+		return
+	}
+
+	if isRoot {
+		fmt.Print("ROOT-")
+	} else {
+		if isLeft {
+			fmt.Print(prefix + "L├───")
+		} else {
+			fmt.Print(prefix + "R└───")
+		}
+	}
+
+	fmt.Println(parent.value)
+
+	if isLeft {
+		t.Print(prefix+"│   ", parent.left, true, false)
+		t.Print(prefix+"│   ", parent.right, false, false)
+	} else {
+		t.Print(prefix+"    ", parent.left, true, false)
+		t.Print(prefix+"    ", parent.right, false, false)
+	}
+}
