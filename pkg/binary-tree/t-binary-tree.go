@@ -95,3 +95,18 @@ func (t *BinaryTree) Print(prefix string, parent *Node, isLeft bool, isRoot bool
 		t.Print(prefix+"    ", parent.right, false, false)
 	}
 }
+
+func (t *BinaryTree) Reverse(currentNode *Node) {
+	if currentNode == nil {
+		return
+	}
+
+	// recursive calls to traverse the tree left and right
+	t.Reverse(currentNode.left)
+	t.Reverse(currentNode.right)
+
+	// swap the left and right nodes
+	temp := currentNode.left
+	currentNode.left = currentNode.right
+	currentNode.right = temp
+}
