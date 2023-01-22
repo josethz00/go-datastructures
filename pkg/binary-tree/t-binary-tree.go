@@ -21,18 +21,18 @@ func (t *BinaryTree) Insert(value int) {
 		currentNode := t.root // we start from the root
 
 		for {
-			if value < currentNode.value {
-				if currentNode.left == nil {
+			if value < currentNode.value { // in binary trees the left node is always smaller than the right node
+				if currentNode.left == nil { // if the left node is nil then we can insert the new node here
 					currentNode.left = &Node{value: value}
 					return
 				}
-				currentNode = currentNode.left
-			} else {
-				if currentNode.right == nil {
+				currentNode = currentNode.left // if the left node is not nil then we need to go deeper, so we assign the left node to the current node
+			} else { // if `value` is greater than the current node value then we need to go to the right
+				if currentNode.right == nil { // if the right node is nil then we can insert the new node here
 					currentNode.right = &Node{value: value}
 					return
 				}
-				currentNode = currentNode.right
+				currentNode = currentNode.right // if the right node is not nil then we need to go deeper, so we assign the right node to the current node
 			}
 		}
 	}
