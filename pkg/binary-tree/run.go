@@ -26,14 +26,17 @@ func Run(traversalType string) {
 	fmt.Println()
 
 	if traversalType == "preorder" {
+		fmt.Println("Preorder traversal: ")
 		binaryTree.PreOrderTraversal(binaryTree.root)
 		return
 	}
 	if traversalType == "inorder" {
+		fmt.Println("Inorder traversal: ")
 		binaryTree.InOrderTraversal(binaryTree.root)
 		return
 	}
 	if traversalType == "postorder" {
+		fmt.Println("Postorder traversal: ")
 		binaryTree.PostOrderTraversal(binaryTree.root)
 		return
 	}
