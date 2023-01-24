@@ -52,3 +52,16 @@ func (s *Stack) Top() int {
 
 	return s.value[s.top]
 }
+
+func (s *Stack) Print() {
+	if s.isEmpty() {
+		fmt.Println("Stack is empty")
+		return
+	}
+
+	for i := s.top; i >= 0; i-- {
+		fmt.Println("-----")
+		fmt.Println("|", s.value[i], "|")
+		fmt.Println("-----")
+	}
+}

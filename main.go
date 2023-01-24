@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	t_binary_tree "go-datastructures/pkg/binary-tree"
+	t_stack "go-datastructures/pkg/stack"
 	"os"
 )
 
@@ -43,6 +44,9 @@ func main() {
 		fmt.Println("    - postorder")
 		scanner.Scan()
 		t_binary_tree.Run(scanner.Text())
+	case "3":
+		fmt.Println("\nYou selected Stack")
+		t_stack.Run()
 	default:
 		fmt.Println("TODO: Implement the rest of the data structures")
 	}
