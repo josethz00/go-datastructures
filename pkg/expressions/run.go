@@ -6,6 +6,18 @@ import (
 	number_util "go-datastructures/utils"
 )
 
+func priority(operator string) int {
+	if operator == "(" {
+		return 0
+	} else if operator == "+" || operator == "-" {
+		return 1
+	} else if operator == "*" || operator == "/" {
+		return 2
+	} else {
+		return -1 // invalid operator
+	}
+}
+
 func Run() {
 	fmt.Print("Select a expression type (infix/postfix):   ")
 	var expressionType string
