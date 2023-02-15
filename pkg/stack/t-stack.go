@@ -1,6 +1,7 @@
 package t_stack
 
 import (
+	"errors"
 	"fmt"
 )
 
@@ -121,6 +122,70 @@ func (s *StackStr) Top() string {
 
 func (s *StackStr) Print() {
 	if s.isEmpty() {
+		fmt.Println("Stack is empty")
+		return
+	}
+
+	for i := s.top; i >= 0; i-- {
+		fmt.Println("-----")
+		fmt.Println("|", s.value[i], "|")
+		fmt.Println("-----")
+	}
+}
+
+type StackRune struct {
+	max   int
+	top   int
+	value []rune
+}
+
+func NewStackRune(max int) *StackRune {
+	return &StackRune{
+		max:   max,
+		top:   -1,
+		value: make([]rune, max),
+	}
+}
+
+func (s *StackRune) IsEmpty() bool {
+	return s.top == -1
+}
+
+func (s *StackRune) IsFull() bool {
+	return s.top == s.max-1
+}
+
+func (s *StackRune) Push(newValue rune) {
+	if s.IsFull() {
+		return
+	}
+
+	s.top++
+	s.value[s.top] = newValue
+}
+
+func (s *StackRune) Pop() (rune, error) {
+	if s.IsEmpty() {
+		return ' ', errors.New("Stack is empty")
+	}
+
+	value := s.value[s.top]
+	s.top--
+
+	return value, nil
+}
+
+func (s *StackRune) Top() (rune, error) {
+	if s.IsEmpty() {
+		fmt.Println("Stack is empty")
+		return ' ', errors.New("Stack is empty")
+	}
+
+	return s.value[s.top], nil
+}
+
+func (s *StackRune) Print() {
+	if s.IsEmpty() {
 		fmt.Println("Stack is empty")
 		return
 	}
