@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	t_binary_tree "go-datastructures/pkg/binary-tree"
+	"go-datastructures/pkg/expressions"
 	t_stack "go-datastructures/pkg/stack"
 	"os"
 )
@@ -25,6 +26,7 @@ func main() {
 	fmt.Println("    13. Array")
 	fmt.Println("    14. Matrix")
 	fmt.Println("    15. Dynamic Array")
+	fmt.Println("    16. Expressions (Infix, Postfix)")
 
 	args := os.Args[1:]
 
@@ -47,6 +49,9 @@ func main() {
 	case "3":
 		fmt.Println("\nYou selected Stack")
 		t_stack.Run()
+	case "16":
+		fmt.Println("\nYou selected Expressions")
+		expressions.Run()
 	default:
 		fmt.Println("TODO: Implement the rest of the data structures")
 	}
